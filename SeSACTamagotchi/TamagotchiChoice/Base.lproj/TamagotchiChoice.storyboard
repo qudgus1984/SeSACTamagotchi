@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PWF-dM-BQr">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tamagotchi Choice Collection View Controller-->
+        <scene sceneID="5vP-RL-zDc">
+            <objects>
+                <collectionViewController storyboardIdentifier="TamagotchiChoiceCollectionViewController" id="PWF-dM-BQr" customClass="TamagotchiChoiceCollectionViewController" customModule="SeSACTamagotchi" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="PGl-rg-OcN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1VE-ME-bHd">
+                            <size key="itemSize" width="152" height="188"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="TamagotchiChoiceCollectionViewCell" reuseIdentifier="TamagotchiChoiceCollectionViewCell" id="uAG-Vh-6pc" customClass="TamagotchiChoiceCollectionViewCell" customModule="SeSACTamagotchi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="152" height="188"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HZx-YT-oiS">
+                                    <rect key="frame" x="0.0" y="0.0" width="152" height="188"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-1" translatesAutoresizingMaskIntoConstraints="NO" id="jpo-Rc-m9P">
+                                            <rect key="frame" x="8" y="8" width="136" height="136"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="jpo-Rc-m9P" secondAttribute="height" id="BAG-6b-mXb"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="따끈따끈 다마고치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4h8-hP-Hbc">
+                                            <rect key="frame" x="8" y="152" width="136" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jpo-Rc-m9P" firstAttribute="leading" secondItem="HZx-YT-oiS" secondAttribute="leading" constant="8" id="1e0-At-plC"/>
+                                        <constraint firstAttribute="bottom" secondItem="4h8-hP-Hbc" secondAttribute="bottom" constant="8" id="8bD-mn-QlD"/>
+                                        <constraint firstAttribute="trailing" secondItem="jpo-Rc-m9P" secondAttribute="trailing" constant="8" id="OA6-IU-qTY"/>
+                                        <constraint firstAttribute="trailing" secondItem="4h8-hP-Hbc" secondAttribute="trailing" constant="8" id="OCk-QF-NZ1"/>
+                                        <constraint firstItem="4h8-hP-Hbc" firstAttribute="top" secondItem="jpo-Rc-m9P" secondAttribute="bottom" constant="8" id="YFB-l9-xXK"/>
+                                        <constraint firstItem="4h8-hP-Hbc" firstAttribute="leading" secondItem="HZx-YT-oiS" secondAttribute="leading" constant="8" id="ZMI-Ya-fjC"/>
+                                        <constraint firstItem="jpo-Rc-m9P" firstAttribute="top" secondItem="HZx-YT-oiS" secondAttribute="top" constant="8" id="nE6-lB-XoO"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="152" height="188"/>
+                                <connections>
+                                    <outlet property="tamagotchiImageView" destination="jpo-Rc-m9P" id="Qve-97-8dq"/>
+                                    <outlet property="tamagotchiNicknameLabel" destination="4h8-hP-Hbc" id="9GE-H9-qGF"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="PWF-dM-BQr" id="gbK-bi-G0H"/>
+                            <outlet property="delegate" destination="PWF-dM-BQr" id="QNV-NB-Qr6"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFK-hS-qw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7070" y="157"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1-1" width="152" height="151"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

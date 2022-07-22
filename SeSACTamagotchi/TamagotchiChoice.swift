@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TamagotchiChoiceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
