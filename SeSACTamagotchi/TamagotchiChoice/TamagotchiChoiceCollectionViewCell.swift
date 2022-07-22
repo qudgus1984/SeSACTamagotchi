@@ -20,10 +20,12 @@ class TamagotchiChoiceCollectionViewCell: UICollectionViewCell {
         
         tamagotchiNicknameLabel.font = .boldSystemFont(ofSize: 12)
         tamagotchiNicknameLabel.textAlignment = .center
+        tamagotchiNicknameLabel.layer.cornerRadius = 3
         
         tamagotchiNicknameLabel.textColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
 
         tamagotchiImageView.image = UIImage(named: data.image)
+        
         
     }
     
