@@ -19,7 +19,12 @@
 		2F90B4E1288A920D002181FE /* TamagotchiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90B4E0288A920D002181FE /* TamagotchiData.swift */; };
 		2F90B4E4288AD51D002181FE /* TamagotchiStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F90B4E3288AD51D002181FE /* TamagotchiStart.storyboard */; };
 		2F90B4E6288AD535002181FE /* TamagotchiStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90B4E5288AD535002181FE /* TamagotchiStartViewController.swift */; };
-		2F90B4EB288ADBC6002181FE /* LabelUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90B4EA288ADBC6002181FE /* LabelUI.swift */; };
+		2F90B4EB288ADBC6002181FE /* Label+TextFieldUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90B4EA288ADBC6002181FE /* Label+TextFieldUI.swift */; };
+		2FA69CCD288AFD91009053F7 /* ButtonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA69CCC288AFD91009053F7 /* ButtonUI.swift */; };
+		2FA69CD2288B0318009053F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA69CD1288B0318009053F7 /* MainViewController.swift */; };
+		2FA69CD5288B0C28009053F7 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA69CD4288B0C28009053F7 /* Setting.storyboard */; };
+		2FA69CD7288B0C33009053F7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA69CD6288B0C33009053F7 /* SettingViewController.swift */; };
+		2FA69CD9288B10CF009053F7 /* ViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA69CD8288B10CF009053F7 /* ViewUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +42,12 @@
 		2F90B4E0288A920D002181FE /* TamagotchiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiData.swift; sourceTree = "<group>"; };
 		2F90B4E3288AD51D002181FE /* TamagotchiStart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TamagotchiStart.storyboard; sourceTree = "<group>"; };
 		2F90B4E5288AD535002181FE /* TamagotchiStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiStartViewController.swift; sourceTree = "<group>"; };
-		2F90B4EA288ADBC6002181FE /* LabelUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelUI.swift; sourceTree = "<group>"; };
+		2F90B4EA288ADBC6002181FE /* Label+TextFieldUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+TextFieldUI.swift"; sourceTree = "<group>"; };
+		2FA69CCC288AFD91009053F7 /* ButtonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUI.swift; sourceTree = "<group>"; };
+		2FA69CD1288B0318009053F7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2FA69CD4288B0C28009053F7 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		2FA69CD6288B0C33009053F7 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		2FA69CD8288B10CF009053F7 /* ViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,8 @@
 		2F90B4C3288A87C8002181FE /* SeSACTamagotchi */ = {
 			isa = PBXGroup;
 			children = (
+				2FA69CD3288B0C18009053F7 /* Setting */,
+				2FA69CCE288B0261009053F7 /* Main */,
 				2F90B4E7288ADB6C002181FE /* UI */,
 				2F90B4E2288AD501002181FE /* TamagotchiStart */,
 				2F90B4DB288A8C55002181FE /* TamagotchiChoice */,
@@ -86,7 +98,6 @@
 				2F90B4CF288A87CA002181FE /* LaunchScreen.storyboard */,
 				2F90B4CD288A87CA002181FE /* Assets.xcassets */,
 				2F90B4C4288A87C8002181FE /* AppDelegate.swift */,
-				2F90B4DE288A8F18002181FE /* Main.storyboard */,
 				2F90B4C6288A87C8002181FE /* SceneDelegate.swift */,
 				2F90B4E0288A920D002181FE /* TamagotchiData.swift */,
 			);
@@ -115,9 +126,29 @@
 		2F90B4E7288ADB6C002181FE /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2F90B4EA288ADBC6002181FE /* LabelUI.swift */,
+				2F90B4EA288ADBC6002181FE /* Label+TextFieldUI.swift */,
+				2FA69CCC288AFD91009053F7 /* ButtonUI.swift */,
+				2FA69CD8288B10CF009053F7 /* ViewUI.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		2FA69CCE288B0261009053F7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2F90B4DE288A8F18002181FE /* Main.storyboard */,
+				2FA69CD1288B0318009053F7 /* MainViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		2FA69CD3288B0C18009053F7 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2FA69CD4288B0C28009053F7 /* Setting.storyboard */,
+				2FA69CD6288B0C33009053F7 /* SettingViewController.swift */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +214,7 @@
 				2F90B4CC288A87C8002181FE /* TamagotchiChoice.storyboard in Resources */,
 				2F90B4E4288AD51D002181FE /* TamagotchiStart.storyboard in Resources */,
 				2F90B4DF288A8F18002181FE /* Main.storyboard in Resources */,
+				2FA69CD5288B0C28009053F7 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,13 +226,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F90B4DD288A8C8D002181FE /* TamagotchiChoiceCollectionViewCell.swift in Sources */,
+				2FA69CD7288B0C33009053F7 /* SettingViewController.swift in Sources */,
+				2FA69CCD288AFD91009053F7 /* ButtonUI.swift in Sources */,
 				2F90B4DA288A8C34002181FE /* TamagotchiChoiceCollectionViewController.swift in Sources */,
+				2FA69CD9288B10CF009053F7 /* ViewUI.swift in Sources */,
 				2F90B4C9288A87C8002181FE /* TamagotchiChoice.swift in Sources */,
 				2F90B4E6288AD535002181FE /* TamagotchiStartViewController.swift in Sources */,
 				2F90B4C5288A87C8002181FE /* AppDelegate.swift in Sources */,
 				2F90B4E1288A920D002181FE /* TamagotchiData.swift in Sources */,
-				2F90B4EB288ADBC6002181FE /* LabelUI.swift in Sources */,
+				2F90B4EB288ADBC6002181FE /* Label+TextFieldUI.swift in Sources */,
 				2F90B4C7288A87C8002181FE /* SceneDelegate.swift in Sources */,
+				2FA69CD2288B0318009053F7 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
