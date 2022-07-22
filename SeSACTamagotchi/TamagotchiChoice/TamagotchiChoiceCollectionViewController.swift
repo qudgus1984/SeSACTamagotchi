@@ -16,6 +16,7 @@ class TamagotchiChoiceCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         layoutCell()
         
+        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
 
     }
 
@@ -34,6 +35,9 @@ class TamagotchiChoiceCollectionViewController: UICollectionViewController {
         let data = tamagotchiData.Tamagotchi[indexPath.row]
         cell.configureTamagotchiCell(data: data)
         return cell
+        
+        
+        
     }
     
     func layoutCell() {
@@ -48,6 +52,11 @@ class TamagotchiChoiceCollectionViewController: UICollectionViewController {
         layout.minimumInteritemSpacing = spacing
         
         collectionView.collectionViewLayout = layout
+        collectionView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+        
+        // nav 상단 title
+        navigationItem.title = "다마고치 선택하기"
+
     }
 
 }
