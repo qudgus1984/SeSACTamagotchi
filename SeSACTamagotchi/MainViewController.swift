@@ -23,7 +23,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var riceButton: UIButton!
     @IBOutlet weak var waterButton: UIButton!
     
-    var titleName = "Cody"
     override func viewDidLoad() {
         super.viewDidLoad()
         // 배경 설정
@@ -46,7 +45,7 @@ class MainViewController: UIViewController {
         eatbuttonUI(sender: riceButton)
         eatbuttonUI(sender: waterButton)
         
-        navigationItem.title = "\(titleName)님의 다마고치"
+        navigationItem.title = "\(nickname)님의 다마고치"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
         
         navigationItem.rightBarButtonItem?.tintColor = .black

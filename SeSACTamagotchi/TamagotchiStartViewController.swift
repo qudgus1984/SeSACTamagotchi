@@ -27,8 +27,9 @@ class TamagotchiStartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 투명해지게 하는 배경 뷰 이미지 설정
+
         backgroundView.backgroundColor = UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 0.25)
-        
+
         // 포함하는 뷰 배경 설정
         backgroundViewUI(sender: containView)
         containView.layer.cornerRadius = 10
@@ -56,6 +57,7 @@ class TamagotchiStartViewController: UIViewController {
     }
     
     @IBAction func cancelButtonClicked(_ sender: UIButton) {
+        dismiss(animated: true)
     }
     
     @IBAction func startButtonClicked(_ sender: UIButton) {

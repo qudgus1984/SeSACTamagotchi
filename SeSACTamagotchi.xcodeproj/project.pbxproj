@@ -28,6 +28,7 @@
 		2FAD5D04288D16CE00D3F8CF /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAD5D03288D16CE00D3F8CF /* SettingTableViewCell.swift */; };
 		2FAD5D07288D29C100D3F8CF /* ChangeName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FAD5D06288D29C100D3F8CF /* ChangeName.storyboard */; };
 		2FAD5D09288D29EE00D3F8CF /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAD5D08288D29EE00D3F8CF /* ChangeNameViewController.swift */; };
+		2FADD989288D51A900DBE3B7 /* DataresetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADD988288D51A900DBE3B7 /* DataresetAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		2FAD5D03288D16CE00D3F8CF /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		2FAD5D06288D29C100D3F8CF /* ChangeName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeName.storyboard; sourceTree = "<group>"; };
 		2FAD5D08288D29EE00D3F8CF /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
+		2FADD988288D51A900DBE3B7 /* DataresetAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataresetAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		2F90B4C3288A87C8002181FE /* SeSACTamagotchi */ = {
 			isa = PBXGroup;
 			children = (
+				2FADD987288D518B00DBE3B7 /* Alert */,
 				2FAD5D05288D29A800D3F8CF /* changeName */,
 				2FA69CD3288B0C18009053F7 /* Setting */,
 				2FA69CCE288B0261009053F7 /* Main */,
@@ -166,6 +169,14 @@
 				2FAD5D08288D29EE00D3F8CF /* ChangeNameViewController.swift */,
 			);
 			path = changeName;
+			sourceTree = "<group>";
+		};
+		2FADD987288D518B00DBE3B7 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				2FADD988288D51A900DBE3B7 /* DataresetAlert.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +261,7 @@
 				2FA69CD9288B10CF009053F7 /* ViewUI.swift in Sources */,
 				2F90B4C9288A87C8002181FE /* TamagotchiChoice.swift in Sources */,
 				2F90B4E6288AD535002181FE /* TamagotchiStartViewController.swift in Sources */,
+				2FADD989288D51A900DBE3B7 /* DataresetAlert.swift in Sources */,
 				2F90B4C5288A87C8002181FE /* AppDelegate.swift in Sources */,
 				2FAD5D04288D16CE00D3F8CF /* SettingTableViewCell.swift in Sources */,
 				2F90B4E1288A920D002181FE /* TamagotchiData.swift in Sources */,

@@ -8,22 +8,35 @@
 import UIKit
 
 class ChangeNameViewController: UIViewController {
-
+    
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var nicknameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        navigationItem.title = "\(nickname)님 이름 정하기"
+        navigationItem.rightBarButtonItem =
+        UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButton))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        
+        nicknameTextField.placeholder = nickname
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func saveButton() {
+        if nicknameTextField == nil {
+            return         nicknameTextField.placeholder = nickname
+        } else {
+            nickname = nicknameTextField.text!
+        }
     }
-    */
+
+    
+    
+
+
 
 }

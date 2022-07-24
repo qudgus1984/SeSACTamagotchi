@@ -58,5 +58,19 @@ class TamagotchiChoiceCollectionViewController: UICollectionViewController {
         navigationItem.title = "다마고치 선택하기"
 
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let sb = UIStoryboard(name: "TamagotchiStart", bundle: nil)
+        //2.
+        let vc = sb.instantiateViewController(withIdentifier: "TamagotchiStartViewController") as! TamagotchiStartViewController
+        //2.5
+        let nav = UINavigationController(rootViewController: vc)
+        
+        //2.5 present 시 옵션
+        nav.modalPresentationStyle = .fullScreen
+        //3
+        self.present(nav, animated: true)
+    }
 
 }
