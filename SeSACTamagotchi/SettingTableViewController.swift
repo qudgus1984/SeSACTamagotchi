@@ -68,7 +68,14 @@ class SettingTableViewController: UITableViewController {
             let sb = UIStoryboard(name: "ChangeName", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "ChangeNameViewController") as! ChangeNameViewController
             self.navigationController?.pushViewController(vc, animated: true)
-        } else if indexPath.row == 2 { // Alert 띄우기
+        } else if indexPath.row == 1 {
+            let sb = UIStoryboard(name: "TamagotchiChange", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "TamagotchiChangeCollectionViewController") as! TamagotchiChangeCollectionViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+        
+        else if indexPath.row == 2 { // Alert 띄우기
             let alert = UIAlertController(title: "데이터 초기화", message: "정말 다시 시작하실건가용?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "아냐!", style: .cancel))
             alert.addAction(UIAlertAction(title: "웅", style: .default))

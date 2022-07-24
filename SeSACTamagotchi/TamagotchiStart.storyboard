@@ -121,6 +121,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="w3s-ak-dpU" id="TAM-4M-Vjb"/>
+                        <outlet property="behindView" destination="5EZ-qb-Rvc" id="d20-0N-thy"/>
                         <outlet property="cancelButton" destination="Sdw-HS-blX" id="xgr-Hg-Cy7"/>
                         <outlet property="containView" destination="PyV-J1-iAT" id="5Qc-8e-Pga"/>
                         <outlet property="lineLabel" destination="Pzf-QY-WNA" id="mL0-E5-RDe"/>
