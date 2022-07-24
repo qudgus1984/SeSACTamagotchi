@@ -93,7 +93,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="밥먹기"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uza-OC-oAb">
-                                <rect key="frame" x="239" y="638" width="75" height="34"/>
+                                <rect key="frame" x="239" y="638" width="81.5" height="34"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="pencil.tip" catalog="system" title="밥먹기"/>
                             </button>
@@ -110,6 +110,7 @@
                             <constraint firstItem="gd5-XL-305" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="88" id="HLd-Vf-NeV"/>
                             <constraint firstItem="JCO-AK-AgY" firstAttribute="top" secondItem="djL-gM-vJF" secondAttribute="bottom" constant="8" id="K1c-JY-0Na"/>
                             <constraint firstItem="DTI-Rk-eKf" firstAttribute="width" secondItem="wnf-JN-i31" secondAttribute="width" id="Knh-NG-XeR"/>
+                            <constraint firstItem="Uza-OC-oAb" firstAttribute="width" secondItem="VD7-PT-lej" secondAttribute="width" id="LwT-Tq-7jn"/>
                             <constraint firstItem="Uza-OC-oAb" firstAttribute="leading" secondItem="DTI-Rk-eKf" secondAttribute="trailing" constant="8" id="Mre-kz-iXp"/>
                             <constraint firstItem="gd5-XL-305" firstAttribute="width" secondItem="wnf-JN-i31" secondAttribute="width" id="N7a-VT-LSE"/>
                             <constraint firstAttribute="trailing" secondItem="M9S-CN-9PC" secondAttribute="trailing" id="P2Q-T4-Gy1"/>
@@ -143,7 +144,9 @@
                         <outlet property="lineView1" destination="gd5-XL-305" id="wPF-Q6-ZpQ"/>
                         <outlet property="lineView2" destination="ynW-1h-xL9" id="m8j-SR-W7a"/>
                         <outlet property="nicknameLabel" destination="JCO-AK-AgY" id="9RY-Vr-MwT"/>
+                        <outlet property="riceButton" destination="VD7-PT-lej" id="VlH-x0-jl1"/>
                         <outlet property="riceTextField" destination="wnf-JN-i31" id="rey-K6-xsU"/>
+                        <outlet property="waterButton" destination="Uza-OC-oAb" id="5zw-s0-rM7"/>
                         <outlet property="waterTextField" destination="DTI-Rk-eKf" id="R3T-Cv-xrY"/>
                     </connections>
                 </viewController>

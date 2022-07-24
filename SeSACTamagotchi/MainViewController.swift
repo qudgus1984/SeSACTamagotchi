@@ -19,6 +19,10 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var riceTextField: UITextField!
     @IBOutlet weak var waterTextField: UITextField!
+    
+    @IBOutlet weak var riceButton: UIButton!
+    @IBOutlet weak var waterButton: UIButton!
+    
     var titleName = "Cody"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,10 @@ class MainViewController: UIViewController {
         textFieldUI(sender: riceTextField, text: "밥주세용")
         textFieldUI(sender: waterTextField, text: "물주세용")
         
+        // button 설정
+        eatbuttonUI(sender: riceButton)
+        eatbuttonUI(sender: waterButton)
+        
         navigationItem.title = "\(titleName)님의 다마고치"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
         
@@ -49,7 +57,7 @@ class MainViewController: UIViewController {
     @objc func settingButtonClicked(_ sender: UIButton) {
         // 검색화면 UIVC
         let sb = UIStoryboard(name: "Setting", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SettingViewController") as! SettingViewController
+        let vc = sb.instantiateViewController(withIdentifier: "SettingTableViewController") as! SettingTableViewController
 
         self.navigationController?.pushViewController(vc, animated: true)
         
