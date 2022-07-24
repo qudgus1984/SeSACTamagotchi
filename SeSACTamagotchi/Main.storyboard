@@ -163,6 +163,7 @@
                         <outlet property="riceButton" destination="VD7-PT-lej" id="VlH-x0-jl1"/>
                         <outlet property="riceTextField" destination="wnf-JN-i31" id="rey-K6-xsU"/>
                         <outlet property="talkLabel" destination="wRE-QS-msc" id="rN9-F0-zBM"/>
+                        <outlet property="tamagotchiImage" destination="djL-gM-vJF" id="bwh-Fn-nxJ"/>
                         <outlet property="waterButton" destination="Uza-OC-oAb" id="5zw-s0-rM7"/>
                         <outlet property="waterTextField" destination="DTI-Rk-eKf" id="R3T-Cv-xrY"/>
                     </connections>

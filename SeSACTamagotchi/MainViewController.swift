@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var riceButton: UIButton!
     @IBOutlet weak var waterButton: UIButton!
     
+    @IBOutlet weak var tamagotchiImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // 배경 설정
@@ -51,6 +52,8 @@ class MainViewController: UIViewController {
         talkLabel.text = tamagotchiTalk.randomElement()
         talkLabel.numberOfLines = 0
         
+    
+        
         
         navigationItem.title = "\(nickname)님의 다마고치"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
@@ -58,7 +61,7 @@ class MainViewController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = .black
         
         
-
+        
 
     }
     
@@ -83,6 +86,7 @@ class MainViewController: UIViewController {
         
         // LVLabel 출력
         levelLabel.text = "LV\(UserDefaults.standard.integer(forKey: "eat2"))・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
+        tamagotchiImageReset()
         
     }
     
@@ -99,7 +103,13 @@ class MainViewController: UIViewController {
         
         //LVLabel 출력
         levelLabel.text = "LV\(UserDefaults.standard.integer(forKey: "eat2"))・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
+        tamagotchiImageReset()
+    }
+    
+    func tamagotchiImageReset() {
+        tamagotchiImage.image = UIImage(named: " \(UserDefaults.standard.integer(forKey: "choice"))-\(UserDefaults.standard.integer(forKey: "eat2"))")
     }
 
+    
     
 }

@@ -60,7 +60,7 @@ class TamagotchiChoiceCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        UserDefaults.standard.set(indexPath.row+1, forKey: "choice")
         let sb = UIStoryboard(name: "TamagotchiStart", bundle: nil)
         //2.
         let vc = sb.instantiateViewController(withIdentifier: "TamagotchiStartViewController") as! TamagotchiStartViewController
