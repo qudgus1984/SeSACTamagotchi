@@ -91,12 +91,24 @@
                                 <rect key="frame" x="239" y="583" width="81.5" height="34"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="밥먹기"/>
+                                <connections>
+                                    <action selector="riceButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qaY-Fi-bls"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uza-OC-oAb">
                                 <rect key="frame" x="239" y="638" width="81.5" height="34"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="pencil.tip" catalog="system" title="밥먹기"/>
+                                <connections>
+                                    <action selector="waterButtonTappend:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RJl-8s-At7"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRE-QS-msc">
+                                <rect key="frame" x="103" y="171" width="208" height="101"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -105,8 +117,10 @@
                             <constraint firstItem="DTI-Rk-eKf" firstAttribute="top" secondItem="gd5-XL-305" secondAttribute="bottom" constant="20" id="5eV-mt-HpU"/>
                             <constraint firstItem="VD7-PT-lej" firstAttribute="height" secondItem="wnf-JN-i31" secondAttribute="height" id="7ex-0r-BK4"/>
                             <constraint firstItem="wnf-JN-i31" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="88" id="7zZ-Kc-dUQ"/>
+                            <constraint firstItem="wRE-QS-msc" firstAttribute="width" secondItem="GME-SQ-3D4" secondAttribute="width" multiplier="0.87395" id="9xD-gq-IOw"/>
                             <constraint firstItem="VD7-PT-lej" firstAttribute="leading" secondItem="wnf-JN-i31" secondAttribute="trailing" constant="8" id="EAG-lx-Slo"/>
                             <constraint firstItem="gd5-XL-305" firstAttribute="top" secondItem="wnf-JN-i31" secondAttribute="bottom" id="EaS-lZ-ghT"/>
+                            <constraint firstItem="wRE-QS-msc" firstAttribute="centerX" secondItem="GME-SQ-3D4" secondAttribute="centerX" id="HEi-ls-oi6"/>
                             <constraint firstItem="gd5-XL-305" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="88" id="HLd-Vf-NeV"/>
                             <constraint firstItem="JCO-AK-AgY" firstAttribute="top" secondItem="djL-gM-vJF" secondAttribute="bottom" constant="8" id="K1c-JY-0Na"/>
                             <constraint firstItem="DTI-Rk-eKf" firstAttribute="width" secondItem="wnf-JN-i31" secondAttribute="width" id="Knh-NG-XeR"/>
@@ -116,6 +130,7 @@
                             <constraint firstAttribute="trailing" secondItem="M9S-CN-9PC" secondAttribute="trailing" id="P2Q-T4-Gy1"/>
                             <constraint firstItem="VD7-PT-lej" firstAttribute="top" secondItem="xw4-ua-33p" secondAttribute="bottom" constant="44" id="PGu-Pw-Env"/>
                             <constraint firstItem="JCO-AK-AgY" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Rbn-GK-w8a"/>
+                            <constraint firstItem="wRE-QS-msc" firstAttribute="height" secondItem="GME-SQ-3D4" secondAttribute="height" multiplier="0.564246" id="SZy-jz-gJc"/>
                             <constraint firstItem="GME-SQ-3D4" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.2" id="UDR-KZ-s5e"/>
                             <constraint firstItem="djL-gM-vJF" firstAttribute="top" secondItem="GME-SQ-3D4" secondAttribute="bottom" constant="4" id="UV9-TI-V5l"/>
                             <constraint firstItem="DTI-Rk-eKf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="88" id="WOd-oz-sEq"/>
@@ -127,6 +142,7 @@
                             <constraint firstItem="GME-SQ-3D4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="f9x-Eg-XTc"/>
                             <constraint firstItem="Uza-OC-oAb" firstAttribute="top" secondItem="VD7-PT-lej" secondAttribute="bottom" constant="21" id="l5e-hp-bOZ"/>
                             <constraint firstItem="ynW-1h-xL9" firstAttribute="top" secondItem="DTI-Rk-eKf" secondAttribute="bottom" id="nqx-Du-z8r"/>
+                            <constraint firstItem="wRE-QS-msc" firstAttribute="centerY" secondItem="GME-SQ-3D4" secondAttribute="centerY" id="oHs-tz-DC9"/>
                             <constraint firstAttribute="bottom" secondItem="M9S-CN-9PC" secondAttribute="bottom" id="pUt-cc-FGg"/>
                             <constraint firstItem="Uza-OC-oAb" firstAttribute="height" secondItem="DTI-Rk-eKf" secondAttribute="height" id="tWt-Dv-oN4"/>
                             <constraint firstItem="xw4-ua-33p" firstAttribute="top" secondItem="JCO-AK-AgY" secondAttribute="bottom" constant="8" id="vdX-Ws-1eQ"/>
@@ -146,6 +162,7 @@
                         <outlet property="nicknameLabel" destination="JCO-AK-AgY" id="9RY-Vr-MwT"/>
                         <outlet property="riceButton" destination="VD7-PT-lej" id="VlH-x0-jl1"/>
                         <outlet property="riceTextField" destination="wnf-JN-i31" id="rey-K6-xsU"/>
+                        <outlet property="talkLabel" destination="wRE-QS-msc" id="rN9-F0-zBM"/>
                         <outlet property="waterButton" destination="Uza-OC-oAb" id="5zw-s0-rM7"/>
                         <outlet property="waterTextField" destination="DTI-Rk-eKf" id="R3T-Cv-xrY"/>
                     </connections>

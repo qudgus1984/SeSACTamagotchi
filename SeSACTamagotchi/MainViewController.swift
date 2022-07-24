@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var talkLabel: UILabel!
     
     @IBOutlet weak var lightLineView: UIView!
     @IBOutlet weak var lineView1: UIView!
@@ -45,10 +46,18 @@ class MainViewController: UIViewController {
         eatbuttonUI(sender: riceButton)
         eatbuttonUI(sender: waterButton)
         
+        // 다마고치 talk 설정
+        talkLabel.textAlignment = .center
+        talkLabel.text = tamagotchiTalk.randomElement()
+        talkLabel.numberOfLines = 0
+        
+        
         navigationItem.title = "\(nickname)님의 다마고치"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
         
         navigationItem.rightBarButtonItem?.tintColor = .black
+        
+        
 
 
     }
@@ -61,6 +70,36 @@ class MainViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         
 
+    }
+    
+    @IBAction func riceButtonTapped(_ sender: UIButton) {
+        talkLabel.text = tamagotchiTalk.randomElement()
+        let currentCount = UserDefaults.standard.integer(forKey: "eat0")
+        let updateCount = currentCount + 1
+        UserDefaults.standard.set(updateCount, forKey: "eat0")
+        eatArray[0] = updateCount
+        eatArray[2] = ((eatArray[0] / 5) + (eatArray[1] / 2)) / 10
+        UserDefaults.standard.set(eatArray[2], forKey: "eat2")
+        
+        // LVLabel 출력
+        levelLabel.text = "LV\(UserDefaults.standard.integer(forKey: "eat2"))・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
         
     }
+    
+    @IBAction func waterButtonTappend(_ sender: UIButton) {
+        talkLabel.text = tamagotchiTalk.randomElement()
+        
+
+        let currentCount = UserDefaults.standard.integer(forKey: "eat1")
+        let updateCount = currentCount + 1
+        UserDefaults.standard.set(updateCount, forKey: "eat1")
+        eatArray[1] = updateCount
+        eatArray[2] = ((eatArray[0] / 5) + (eatArray[1] / 2)) / 10
+        UserDefaults.standard.set(eatArray[2], forKey: "eat2")
+        
+        //LVLabel 출력
+        levelLabel.text = "LV\(UserDefaults.standard.integer(forKey: "eat2"))・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
+    }
+
+    
 }

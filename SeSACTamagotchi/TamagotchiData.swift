@@ -56,3 +56,7 @@ struct StartTamagotchiInfo {
 var nickname:String = "대장"
 
 let Defaults = UserDefaults.standard
+
+var tamagotchiTalk: [String] = ["\(nickname)님, 오늘 깃허브 푸쉬 하셨겠죠?", "하루에 공부 8시간은 해야겠죠?", "설마 오늘도 노시는건 아니죠?", "오늘의 TIL는 작성하셨겠죠?", "오늘 과제는 잘 마무리했나요?", "지금 잠이와요? 그 개발실력에?", "복습 안하셨다고요? 오늘 잠은 안자시는거죠?", "클래스와 구조체에는 무슨 차이가 있을까요?"]
+
+var eatArray: [Int] = [0,0,0] // 밥알, 물, 레벨
