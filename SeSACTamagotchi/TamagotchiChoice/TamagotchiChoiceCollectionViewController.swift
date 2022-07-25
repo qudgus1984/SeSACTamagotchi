@@ -69,7 +69,7 @@ class TamagotchiChoiceCollectionViewController: UICollectionViewController {
             let vc = sb.instantiateViewController(withIdentifier: "TamagotchiStartViewController") as! TamagotchiStartViewController
             let nav = UINavigationController(rootViewController: vc)
             
-            nav.modalPresentationStyle = .fullScreen
+            nav.modalPresentationStyle = .overCurrentContext
             self.present(nav, animated: true)
         } else if indexPath.row == 1 {
             UserDefaults.standard.set(2, forKey: "choiceTamagotchi")
@@ -79,7 +79,7 @@ class TamagotchiChoiceCollectionViewController: UICollectionViewController {
             let sb = UIStoryboard(name: "TamagotchiStart", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "TamagotchiStartViewController") as! TamagotchiStartViewController
             let nav = UINavigationController(rootViewController: vc)
-            nav.modalPresentationStyle = .fullScreen
+            nav.modalPresentationStyle = .overCurrentContext
             self.present(nav, animated: true)
         } else if indexPath.row == 2 {
             UserDefaults.standard.set(3, forKey: "choiceTamagotchi")
@@ -87,7 +87,7 @@ class TamagotchiChoiceCollectionViewController: UICollectionViewController {
             let sb = UIStoryboard(name: "TamagotchiStart", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "TamagotchiStartViewController") as! TamagotchiStartViewController
             let nav = UINavigationController(rootViewController: vc)
-            nav.modalPresentationStyle = .fullScreen
+            nav.modalPresentationStyle = .overCurrentContext
             self.present(nav, animated: true)
         } else {
             self.view.makeToast("곧 업데이트할게용")

@@ -28,8 +28,8 @@ class TamagotchiStartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 투명해지게 하는 배경 뷰 이미지 설정
-        behindView.backgroundColor = UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 0.0)
-        backgroundView.backgroundColor = UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 0.15)
+        behindView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        backgroundView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
 
         // 포함하는 뷰 배경 설정
         backgroundViewUI(sender: containView)
@@ -77,6 +77,7 @@ class TamagotchiStartViewController: UIViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
         let nav = UINavigationController(rootViewController: vc)
+        
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
         

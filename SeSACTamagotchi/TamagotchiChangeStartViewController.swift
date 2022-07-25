@@ -75,14 +75,10 @@ class TamagotchiChangeStartViewController: UIViewController {
     @IBAction func startButtonClicked(_ sender: UIButton) {
         UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "changeTamagotchi"), forKey: "choiceTamagotchi")
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        //2.
         let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-        //2.5
         let nav = UINavigationController(rootViewController: vc)
         
-        //2.5 present 시 옵션
         nav.modalPresentationStyle = .fullScreen
-        //3
         self.present(nav, animated: true)
         
     }

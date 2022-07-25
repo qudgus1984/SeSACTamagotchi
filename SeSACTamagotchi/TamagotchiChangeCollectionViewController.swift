@@ -60,24 +60,18 @@ class TamagotchiChangeCollectionViewController: UICollectionViewController {
             UserDefaults.standard.set(1, forKey: "changeTamagotchi")
             tamagotchiNum = UserDefaults.standard.integer(forKey: "changeTamagotchi")
             let sb = UIStoryboard(name: "TamagotchiChangeStart", bundle: nil)
-            //2.
             let vc = sb.instantiateViewController(withIdentifier: "TamagotchiChangeStartViewController") as! TamagotchiChangeStartViewController
-            //2.5
             let nav = UINavigationController(rootViewController: vc)
-            
-            //2.5 present 시 옵션
-            nav.modalPresentationStyle = .fullScreen
-            //3
+            nav.modalPresentationStyle = .overCurrentContext
             self.present(nav, animated: true)
+            
         } else if indexPath.row == 1 {
             UserDefaults.standard.set(2, forKey: "changeTamagotchi")
             tamagotchiNum = UserDefaults.standard.integer(forKey: "changeTamagotchi")
-            
-
             let sb = UIStoryboard(name: "TamagotchiChangeStart", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "TamagotchiChangeStartViewController") as! TamagotchiChangeStartViewController
             let nav = UINavigationController(rootViewController: vc)
-            nav.modalPresentationStyle = .fullScreen
+            nav.modalPresentationStyle = .overCurrentContext
             self.present(nav, animated: true)
         } else if indexPath.row == 2 {
             UserDefaults.standard.set(3, forKey: "changeTamagotchi")
@@ -85,11 +79,10 @@ class TamagotchiChangeCollectionViewController: UICollectionViewController {
             let sb = UIStoryboard(name: "TamagotchiChangeStart", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "TamagotchiChangeStartViewController") as! TamagotchiChangeStartViewController
             let nav = UINavigationController(rootViewController: vc)
-            nav.modalPresentationStyle = .fullScreen
+            nav.modalPresentationStyle = .overCurrentContext
             self.present(nav, animated: true)
         } else {
             self.view.makeToast("곧 업데이트할게용")
-
         }
     }
 
