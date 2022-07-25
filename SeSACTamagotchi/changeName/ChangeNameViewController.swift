@@ -20,10 +20,8 @@ class ChangeNameViewController: UIViewController {
         UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButton))
         navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-
         nicknameTextField.placeholder = nickname
         navigationController?.navigationBar.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-        
     }
     
     @objc func saveButton() {
@@ -33,6 +31,4 @@ class ChangeNameViewController: UIViewController {
             nickname = nicknameTextField.text!
         }
     }
-    
-    
 }

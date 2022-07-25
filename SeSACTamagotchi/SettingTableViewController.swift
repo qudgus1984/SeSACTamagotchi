@@ -16,18 +16,12 @@ class SettingTableViewController: UITableViewController {
         super.viewDidLoad()
         
         baseTableView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-        
-
         // 높이 설정
         tableView.rowHeight = 60
-        
         // label 설정
-        
-        
         navigationItem.title = "설정"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(cancelButton))
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-        
     }
     
     @objc func cancelButton() {
@@ -59,11 +53,6 @@ class SettingTableViewController: UITableViewController {
         cell.iconImageView.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         
         cell.nextButton.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
-        
-        
-        
-        
-        
         return cell
     }
     
@@ -76,25 +65,21 @@ class SettingTableViewController: UITableViewController {
             let sb = UIStoryboard(name: "TamagotchiChange", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "TamagotchiChangeCollectionViewController") as! TamagotchiChangeCollectionViewController
             self.navigationController?.pushViewController(vc, animated: true)
-            
         }
-        
         else if indexPath.row == 2 { // Alert 띄우기
             let alert = UIAlertController(title: "데이터 초기화", message: "정말 다시 시작하실건가용?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "아냐!", style: .cancel))
             alert.addAction(UIAlertAction(title: "웅", style: .default, handler: {_ in self.resetData()}))
             present(alert, animated: true)
         }
-
     }
-    
     func resetData() {
         UserDefaults.standard.set(0, forKey: "eat0");
         UserDefaults.standard.set(0, forKey: "eat1");
-        UserDefaults.standard.set(1, forKey: "eat2")
+        UserDefaults.standard.set(1, forKey: "eat2");
+        UserDefaults.standard.set(false, forKey: "First")
+        
     }
-    
-
     
 }
 

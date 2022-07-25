@@ -64,9 +64,6 @@ class TamagotchiStartViewController: UIViewController {
             tamagotchiNicknameLabel.text = "반짝반짝 다마고치"
             tamagotchiExplainLabel.text = "저는 반짝반짝 다마고치입니다. 몸무게는 150톤이고 키는 150km입니당 저는 밝아서 눈아플수도 있어용 조심하세용 반짝반짝해요~"
         }
-        
-
-
     }
     
     @IBAction func cancelButtonClicked(_ sender: UIButton) {

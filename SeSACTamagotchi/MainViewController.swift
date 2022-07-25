@@ -61,9 +61,9 @@ class MainViewController: UIViewController {
         
         // 기본값 설정
         levelLabel.text = "LV\(UserDefaults.standard.integer(forKey: "level"))・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
-        
+
         // 기본 이미지 설정
-        tamagotchiImage.image = UIImage(named: "\(tamagotchiNum)-\(UserDefaults.standard.integer(forKey: "eat2"))")
+        tamagotchiImage.image = UIImage(named:"\(tamagotchiNum)-\(UserDefaults.standard.integer(forKey: "eat2"))")
 
         navigationItem.title = "\(nickname)님의 다마고치"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
@@ -75,6 +75,7 @@ class MainViewController: UIViewController {
 
     }
     
+
     @objc func settingButtonClicked(_ sender: UIButton) {
         // 검색화면 UIVC
         let sb = UIStoryboard(name: "Setting", bundle: nil)

@@ -18,5 +18,4 @@ func eatbuttonUI(sender: UIButton) {
     sender.layer.borderColor = CGColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
     sender.titleLabel?.textAlignment = .center
     sender.titleLabel?.font.withSize(15)
-    
 }

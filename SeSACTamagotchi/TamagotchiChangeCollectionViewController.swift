@@ -14,25 +14,16 @@ class TamagotchiChangeCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCell()
-        
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        
         return tamagotchiData.Tamagotchi.count
     }
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TamagotchiChangeCollectionViewCell", for: indexPath) as! TamagotchiChangeCollectionViewCell
-        
         let data = tamagotchiData.Tamagotchi[indexPath.row]
         cell.configureTamagotchiChangeCell(data: data)
         return cell
-        
-        
-        
     }
     
     func layoutCell() {
@@ -85,6 +76,4 @@ class TamagotchiChangeCollectionViewController: UICollectionViewController {
             self.view.makeToast("곧 업데이트할게용")
         }
     }
-
-
 }

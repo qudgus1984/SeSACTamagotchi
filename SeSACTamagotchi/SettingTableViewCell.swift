@@ -17,8 +17,6 @@ class SettingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nextButton: UIButton!
 
-    
-
     @IBOutlet weak var baseSettingView: UIView!
     
 }
