@@ -98,7 +98,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uza-OC-oAb">
                                 <rect key="frame" x="239" y="638" width="81.5" height="34"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="pencil.tip" catalog="system" title="밥먹기"/>
+                                <buttonConfiguration key="configuration" style="plain" image="pencil.tip" catalog="system" title="물먹기"/>
                                 <connections>
                                     <action selector="waterButtonTappend:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RJl-8s-At7"/>
                                 </connections>

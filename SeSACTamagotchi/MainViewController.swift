@@ -52,6 +52,13 @@ class MainViewController: UIViewController {
         talkLabel.text = tamagotchiTalk.randomElement()
         talkLabel.numberOfLines = 0
         
+        // 기본값 설정
+        levelLabel.text = "LV\(UserDefaults.standard.integer(forKey: "eat2"))・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
+        
+        // 기본 이미지 설정
+        tamagotchiImage.image = UIImage(named: "\(tamagotchiNum)-\(UserDefaults.standard.integer(forKey: "eat2"))")
+
+        
     
         
         
@@ -107,7 +114,10 @@ class MainViewController: UIViewController {
     }
     
     func tamagotchiImageReset() {
-        tamagotchiImage.image = UIImage(named: " \(UserDefaults.standard.integer(forKey: "choice"))-\(UserDefaults.standard.integer(forKey: "eat2"))")
+        tamagotchiImage.image = UIImage(named: "\(tamagotchiNum)-\(UserDefaults.standard.integer(forKey: "eat2"))")
+        if UserDefaults.standard.integer(forKey: "eat2") >= 10 {
+            UserDefaults.standard.set(9, forKey: "eat2")
+        }
     }
 
     

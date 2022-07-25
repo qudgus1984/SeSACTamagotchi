@@ -56,16 +56,41 @@ class TamagotchiChangeCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let sb = UIStoryboard(name: "TamagotchiChangeStart", bundle: nil)
-        //2.
-        let vc = sb.instantiateViewController(withIdentifier: "TamagotchiChangeStartViewController") as! TamagotchiChangeStartViewController
-        //2.5
-        let nav = UINavigationController(rootViewController: vc)
-        
-        //2.5 present 시 옵션
-        nav.modalPresentationStyle = .fullScreen
-        //3
-        self.present(nav, animated: true)
+        if indexPath.row == 0 {
+            UserDefaults.standard.set(1, forKey: "changeTamagotchi")
+            tamagotchiNum = UserDefaults.standard.integer(forKey: "changeTamagotchi")
+            let sb = UIStoryboard(name: "TamagotchiChangeStart", bundle: nil)
+            //2.
+            let vc = sb.instantiateViewController(withIdentifier: "TamagotchiChangeStartViewController") as! TamagotchiChangeStartViewController
+            //2.5
+            let nav = UINavigationController(rootViewController: vc)
+            
+            //2.5 present 시 옵션
+            nav.modalPresentationStyle = .fullScreen
+            //3
+            self.present(nav, animated: true)
+        } else if indexPath.row == 1 {
+            UserDefaults.standard.set(2, forKey: "changeTamagotchi")
+            tamagotchiNum = UserDefaults.standard.integer(forKey: "changeTamagotchi")
+            
+
+            let sb = UIStoryboard(name: "TamagotchiChangeStart", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "TamagotchiChangeStartViewController") as! TamagotchiChangeStartViewController
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true)
+        } else if indexPath.row == 2 {
+            UserDefaults.standard.set(3, forKey: "changeTamagotchi")
+            tamagotchiNum = UserDefaults.standard.integer(forKey: "changeTamagotchi")
+            let sb = UIStoryboard(name: "TamagotchiChangeStart", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "TamagotchiChangeStartViewController") as! TamagotchiChangeStartViewController
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true)
+        } else {
+            self.view.makeToast("곧 업데이트할게용")
+
+        }
     }
 
 

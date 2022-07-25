@@ -78,10 +78,16 @@ class SettingTableViewController: UITableViewController {
         else if indexPath.row == 2 { // Alert 띄우기
             let alert = UIAlertController(title: "데이터 초기화", message: "정말 다시 시작하실건가용?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "아냐!", style: .cancel))
-            alert.addAction(UIAlertAction(title: "웅", style: .default))
+            alert.addAction(UIAlertAction(title: "웅", style: .default, handler: {_ in self.resetData()}))
             present(alert, animated: true)
         }
 
+    }
+    
+    func resetData() {
+        UserDefaults.standard.set(0, forKey: "eat0");
+        UserDefaults.standard.set(0, forKey: "eat1");
+        UserDefaults.standard.set(1, forKey: "eat2")
     }
     
 
