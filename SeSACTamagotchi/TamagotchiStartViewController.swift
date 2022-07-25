@@ -9,6 +9,7 @@ import UIKit
 
 class TamagotchiStartViewController: UIViewController {
     
+    //MARK: 변수 / Outlet 변수 설정
     var tamagotchiData = StartTamagotchiInfo()
     
     @IBOutlet var behindView: UIView!
@@ -27,6 +28,9 @@ class TamagotchiStartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK: UI 관련 설정
+        
         // 투명해지게 하는 배경 뷰 이미지 설정
         behindView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
         backgroundView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
@@ -51,9 +55,10 @@ class TamagotchiStartViewController: UIViewController {
         buttonUI(sender: startButton)
         
         // 이미지, 타이틀, 설명은 클릭했을 때의 데이터를 받아서 띄워주는 형태로 해야할듯!
-        // 이미지 설정
+        //MARK: 선택한 다마고치 이미지 출력
         tamagotchiImageView.image = UIImage(named: "\(tamagotchiNum)-6")
         
+        //MARK: 선택한 다마고치의 설명 및 이름 설정
         if tamagotchiNum == 1 {
             tamagotchiNicknameLabel.text = "따끔따끔 다마고치"
             tamagotchiExplainLabel.text = "저는 따끔따끔 다마고치입니다. 몸무게는 150톤이고 키는 150km입니당 저 따가워요 건들 ㄴㄴ 따끔해요~"
@@ -66,10 +71,11 @@ class TamagotchiStartViewController: UIViewController {
         }
     }
     
+    //MARK: 취소 버튼 클릭 시
     @IBAction func cancelButtonClicked(_ sender: UIButton) {
         dismiss(animated: true)
     }
-    
+    //MARK: 시작 버튼 클릭 시
     @IBAction func startButtonClicked(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController

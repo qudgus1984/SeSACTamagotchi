@@ -9,33 +9,36 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
     
+    //MARK: 변수 설정 및 테이블뷰에 들어갈 배열 선언
     @IBOutlet var baseTableView: UITableView!
     var settingList = ["내 이름 설정하기", "다마고치 변경하기", "데이터 초기화"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: UI관련 설정
         baseTableView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         // 높이 설정
         tableView.rowHeight = 60
-        // label 설정
+        
+        //MARK: 네비게이션 바 설정
         navigationItem.title = "설정"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(cancelButton))
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
     }
     
+    //MARK: 취소 버튼 클릭 시
     @objc func cancelButton() {
         self.navigationController?.popViewController(animated: true)
     }
     
-    // 셀 갯수 설정
+    //MARK: 테이블 뷰 개수 설정
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settingList.count
     }
-    
+    //MARK: 테이블 셀 UI 설정
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
-        
         cell.baseSettingView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
         cell.settingLabel.text = settingList[indexPath.row]
         simpleText(sender: cell.settingLabel)
@@ -55,7 +58,7 @@ class SettingTableViewController: UITableViewController {
         cell.nextButton.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         return cell
     }
-    
+    //MARK: 테이블 뷰 셀 클릭 시 설정
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let sb = UIStoryboard(name: "ChangeName", bundle: nil)
@@ -73,6 +76,7 @@ class SettingTableViewController: UITableViewController {
             present(alert, animated: true)
         }
     }
+    //MARK: 데이터 초기화 함수 설정
     func resetData() {
         UserDefaults.standard.set(0, forKey: "eat0");
         UserDefaults.standard.set(0, forKey: "eat1");

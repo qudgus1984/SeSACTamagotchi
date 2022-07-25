@@ -10,6 +10,7 @@ import UIKit
 class TamagotchiChangeStartViewController: UIViewController {
     var tamagotchiData = StartTamagotchiInfo()
     
+    //MARK: 변수 / Outlet 변수 설정
     @IBOutlet var behindView: UIView!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var tamagotchiImageView: UIImageView!
@@ -26,6 +27,7 @@ class TamagotchiChangeStartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //MARK: UI 설정
         // 투명해지게 하는 배경 뷰 이미지 설정
         behindView.backgroundColor = UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 0.0)
         backgroundView.backgroundColor = UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 0.15)

@@ -15,6 +15,7 @@ class ChangeNameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //MARK: 네비게이션 바 관련 설정 및 텍스트 필드 설정
         navigationItem.title = "\(nickname)님 이름 정하기"
         navigationItem.rightBarButtonItem =
         UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButton))
@@ -24,6 +25,7 @@ class ChangeNameViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
     }
     
+    //MARK: 저장 버튼 클릭 시 설정
     @objc func saveButton() {
         if nicknameTextField == nil {
             return nicknameTextField.placeholder = nickname

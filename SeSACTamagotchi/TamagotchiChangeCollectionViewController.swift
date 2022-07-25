@@ -13,19 +13,23 @@ class TamagotchiChangeCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //MARK: 레이아웃 설정
         layoutCell()
         view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
     }
+    //MARK: 셀 개수 설정
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tamagotchiData.Tamagotchi.count
     }
+    
+    //MARK: 셀 화면 설정
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TamagotchiChangeCollectionViewCell", for: indexPath) as! TamagotchiChangeCollectionViewCell
         let data = tamagotchiData.Tamagotchi[indexPath.row]
         cell.configureTamagotchiChangeCell(data: data)
         return cell
     }
-    
+    //MARK: 레이아웃 셀 설정
     func layoutCell() {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 8
@@ -44,6 +48,8 @@ class TamagotchiChangeCollectionViewController: UICollectionViewController {
         navigationItem.title = "다마고치 변경하기"
 
     }
+    
+    //MARK: 셀 클릭 시 데이터 설정
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         

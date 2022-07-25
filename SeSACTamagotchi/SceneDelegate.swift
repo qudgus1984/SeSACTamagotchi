@@ -18,6 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         
+        //MARK: 다마고치 선택 후 main 화면으로 이동 -> 구현 시 네비바, 이미지 로드 실패문제 발생
+        
         UserDefaults.standard.set(false, forKey: "First")
                 
         if UserDefaults.standard.bool(forKey: "First") {

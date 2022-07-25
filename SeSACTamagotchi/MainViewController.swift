@@ -8,7 +8,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    
+    //MARK: 변수 / Outlet 변수 설정
     var level = 0
     var tamagotchiLevel = 0
 
@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tamagotchiImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //MARK: UI 설정
         // 배경 설정
         backgroundViewUI(sender: backgroundView)
         
@@ -48,8 +49,6 @@ class MainViewController: UIViewController {
         riceTextField.keyboardType = .numberPad
         waterTextField.keyboardType = .numberPad
 
-
-        
         // button 설정
         eatbuttonUI(sender: riceButton)
         eatbuttonUI(sender: waterButton)
@@ -65,27 +64,22 @@ class MainViewController: UIViewController {
         // 기본 이미지 설정
         tamagotchiImage.image = UIImage(named:"\(tamagotchiNum)-\(UserDefaults.standard.integer(forKey: "eat2"))")
 
+        //MARK: 네비게이션 바 설정
         navigationItem.title = "\(nickname)님의 다마고치"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
         
         navigationItem.rightBarButtonItem?.tintColor = .black
-        
-        
-        
-
     }
     
-
+    //MARK: SettingButton 설정
     @objc func settingButtonClicked(_ sender: UIButton) {
         // 검색화면 UIVC
         let sb = UIStoryboard(name: "Setting", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SettingTableViewController") as! SettingTableViewController
-
         self.navigationController?.pushViewController(vc, animated: true)
-        
-
     }
     
+    //MARK: 밥주는 버튼클릭시
     @IBAction func riceButtonTapped(_ sender: UIButton) {
         talkLabel.text = tamagotchiTalk.randomElement()
         let currentCount = UserDefaults.standard.integer(forKey: "eat0")
@@ -115,7 +109,7 @@ class MainViewController: UIViewController {
         levelLabel.text = "LV\(level)・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
         tamagotchiImageReset()
     }
-    
+    //MARK: 물주는 버튼 클릭시 설정
     @IBAction func waterButtonTappend(_ sender: UIButton) {
         talkLabel.text = tamagotchiTalk.randomElement()
         let currentCount = UserDefaults.standard.integer(forKey: "eat1")
@@ -145,24 +139,27 @@ class MainViewController: UIViewController {
         tamagotchiImageReset()
     }
     
+    //MARK: 이미지 화면 업데이트 필요 함수 설정
     func tamagotchiImageReset() {
         tamagotchiImage.image = UIImage(named: "\(tamagotchiNum)-\(UserDefaults.standard.integer(forKey: "eat2"))")
 
     }
 
-    
+    //MARK: 밥주는 텍스트 필드 클릭 시
     @IBAction func riceTextFieldTapped(_ sender: UITextField) {
         guard let totalRice = Int(sender.text ?? "0") else { return }
         let totalRices = UserDefaults.standard.integer(forKey: "eat0") + totalRice
         UserDefaults.standard.set(totalRices, forKey: "eat0")
     }
     
+    //MARK: 물주는 텍스트 필드 클릭 시
     @IBAction func waterTextFieldTapped(_ sender: UITextField) {
         guard let totalWater = Int(sender.text ?? "0") else { return }
         let totalWaters = UserDefaults.standard.integer(forKey: "eat1") + totalWater
         UserDefaults.standard.set(totalWaters, forKey: "eat1")
     }
     
+    //MARK: 화면 클릭 시 키보드 내리기
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
