@@ -47,10 +47,14 @@ class SettingTableViewController: UITableViewController {
         simpleText(sender: cell.settingLabel)
         if indexPath.row == 0 {
             cell.iconImageView.image = UIImage(systemName: "pencil")
+            cell.nameLabel.text = "\(nickname)"
+            cell.nameLabel.textColor = .systemGray
         } else if indexPath.row == 1 {
             cell.iconImageView.image = UIImage(systemName: "moon.fill")
+            cell.nameLabel.text = .none
         } else if indexPath.row == 2 {
             cell.iconImageView.image = UIImage(systemName: "arrow.clockwise")
+            cell.nameLabel.text = .none
         }
         cell.iconImageView.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         

@@ -66,14 +66,10 @@ class TamagotchiChoiceCollectionViewController: UICollectionViewController {
             UserDefaults.standard.set(1, forKey: "choiceTamagotchi")
             tamagotchiNum = UserDefaults.standard.integer(forKey: "choiceTamagotchi")
             let sb = UIStoryboard(name: "TamagotchiStart", bundle: nil)
-            //2.
             let vc = sb.instantiateViewController(withIdentifier: "TamagotchiStartViewController") as! TamagotchiStartViewController
-            //2.5
             let nav = UINavigationController(rootViewController: vc)
             
-            //2.5 present 시 옵션
             nav.modalPresentationStyle = .fullScreen
-            //3
             self.present(nav, animated: true)
         } else if indexPath.row == 1 {
             UserDefaults.standard.set(2, forKey: "choiceTamagotchi")

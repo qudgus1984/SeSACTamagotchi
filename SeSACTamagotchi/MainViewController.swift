@@ -8,6 +8,9 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    var level = 0
+    var tamagotchiLevel = 0
 
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var nicknameLabel: UILabel!
@@ -42,6 +45,10 @@ class MainViewController: UIViewController {
         // textfield 설정
         textFieldUI(sender: riceTextField, text: "밥주세용")
         textFieldUI(sender: waterTextField, text: "물주세용")
+        riceTextField.keyboardType = .numberPad
+        waterTextField.keyboardType = .numberPad
+
+
         
         // button 설정
         eatbuttonUI(sender: riceButton)
@@ -53,15 +60,11 @@ class MainViewController: UIViewController {
         talkLabel.numberOfLines = 0
         
         // 기본값 설정
-        levelLabel.text = "LV\(UserDefaults.standard.integer(forKey: "eat2"))・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
+        levelLabel.text = "LV\(UserDefaults.standard.integer(forKey: "level"))・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
         
         // 기본 이미지 설정
         tamagotchiImage.image = UIImage(named: "\(tamagotchiNum)-\(UserDefaults.standard.integer(forKey: "eat2"))")
 
-        
-    
-        
-        
         navigationItem.title = "\(nickname)님의 다마고치"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
         
@@ -88,38 +91,109 @@ class MainViewController: UIViewController {
         let updateCount = currentCount + 1
         UserDefaults.standard.set(updateCount, forKey: "eat0")
         eatArray[0] = updateCount
-        eatArray[2] = ((eatArray[0] / 5) + (eatArray[1] / 2)) / 10
-        UserDefaults.standard.set(eatArray[2], forKey: "eat2")
+        eatArray[2] = ((eatArray[0] / 5) + (eatArray[1] / 2))
+        for i in stride(from: 2, through: 9, by: 1){
+            switch eatArray[2] {
+            case 0...19:
+                level = 1
+                tamagotchiLevel = level
+            case i*10...(i+1)*10:
+                level = i
+                tamagotchiLevel = level
+            case 100...:
+                level = 10
+                tamagotchiLevel = level - 1
+            default:
+                self.view.makeToast("오류가 나버렸따")
+            }
+        }
+        UserDefaults.standard.set(tamagotchiLevel, forKey: "eat2")
+        UserDefaults.standard.set(level, forKey: "level")
         
-        // LVLabel 출력
-        levelLabel.text = "LV\(UserDefaults.standard.integer(forKey: "eat2"))・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
+        //LVLabel 출력
+        levelLabel.text = "LV\(level)・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
         tamagotchiImageReset()
-        
     }
     
     @IBAction func waterButtonTappend(_ sender: UIButton) {
         talkLabel.text = tamagotchiTalk.randomElement()
-        
-
         let currentCount = UserDefaults.standard.integer(forKey: "eat1")
         let updateCount = currentCount + 1
         UserDefaults.standard.set(updateCount, forKey: "eat1")
         eatArray[1] = updateCount
-        eatArray[2] = ((eatArray[0] / 5) + (eatArray[1] / 2)) / 10
-        UserDefaults.standard.set(eatArray[2], forKey: "eat2")
+        eatArray[2] = ((eatArray[0] / 5) + (eatArray[1] / 2))
+        for i in stride(from: 2, through: 9, by: 1){
+            switch eatArray[2] {
+            case 0...19:
+                level = 1
+                tamagotchiLevel = level
+            case i*10...(i+1)*10:
+                level = i
+                tamagotchiLevel = level
+            case 100...:
+                level = 10
+                tamagotchiLevel = level - 1
+            default:
+                self.view.makeToast("오류가 나버렸따")
+            }
+        }
+        UserDefaults.standard.set(tamagotchiLevel, forKey: "eat2")
+        UserDefaults.standard.set(level, forKey: "level")
         
         //LVLabel 출력
-        levelLabel.text = "LV\(UserDefaults.standard.integer(forKey: "eat2"))・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
+        levelLabel.text = "LV\(level)・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
         tamagotchiImageReset()
     }
     
     func tamagotchiImageReset() {
         tamagotchiImage.image = UIImage(named: "\(tamagotchiNum)-\(UserDefaults.standard.integer(forKey: "eat2"))")
-        if UserDefaults.standard.integer(forKey: "eat2") >= 10 {
-            UserDefaults.standard.set(9, forKey: "eat2")
-        }
+
     }
 
+    func buttonFoundation() {
+        talkLabel.text = tamagotchiTalk.randomElement()
+        let currentCount = UserDefaults.standard.integer(forKey: "eat0")
+        let updateCount = currentCount + 1
+        UserDefaults.standard.set(updateCount, forKey: "eat0")
+        eatArray[0] = updateCount
+        eatArray[2] = ((eatArray[0] / 5) + (eatArray[1] / 2))
+        for i in stride(from: 2, through: 9, by: 1){
+            switch eatArray[2] {
+            case 0...19:
+                level = 1
+                tamagotchiLevel = level
+            case i*10...(i+1)*10:
+                level = i
+                tamagotchiLevel = level
+            case 100...:
+                level = 10
+                tamagotchiLevel = level - 1
+            default:
+                self.view.makeToast("오류가 나버렸따")
+            }
+        }
+        UserDefaults.standard.set(tamagotchiLevel, forKey: "eat2")
+        UserDefaults.standard.set(level, forKey: "level")
+        
+        //LVLabel 출력
+        levelLabel.text = "LV\(level)・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
+        tamagotchiImageReset()
+    }
     
+    @IBAction func riceTextFieldTapped(_ sender: UITextField) {
+        guard let totalRice = Int(sender.text ?? "0") else { return }
+        let totalRices = UserDefaults.standard.integer(forKey: "eat0") + totalRice
+        UserDefaults.standard.set(totalRices, forKey: "eat0")
+    }
+    
+    @IBAction func waterTextFieldTapped(_ sender: UITextField) {
+        guard let totalWater = Int(sender.text ?? "0") else { return }
+        let totalWaters = UserDefaults.standard.integer(forKey: "eat1") + totalWater
+        UserDefaults.standard.set(totalWaters, forKey: "eat1")
+    }
+    
+    @IBAction func tapView(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     
 }

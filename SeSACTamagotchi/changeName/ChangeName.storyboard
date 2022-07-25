@@ -57,6 +57,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="a1T-4n-TO8"/>
                     <connections>
+                        <outlet property="backgroundView" destination="iZX-ie-HV0" id="SPm-2Q-MDg"/>
                         <outlet property="lineView" destination="yTX-jM-oNo" id="Ipk-to-N8K"/>
                         <outlet property="nicknameTextField" destination="kgP-P6-Iiu" id="tHA-87-JI1"/>
                     </connections>

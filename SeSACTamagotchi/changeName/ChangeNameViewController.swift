@@ -11,6 +11,7 @@ class ChangeNameViewController: UIViewController {
     
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var nicknameTextField: UITextField!
+    @IBOutlet weak var backgroundView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,10 @@ class ChangeNameViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
         
         nicknameTextField.placeholder = nickname
+        
+        navigationController?.navigationBar.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        
+        
         
     }
     
