@@ -71,6 +71,7 @@ class TamagotchiChangeStartViewController: UIViewController {
     }
     
     @IBAction func startButtonClicked(_ sender: UIButton) {
+        UserDefaults.standard.set(tamagotchiNum, forKey: "tamagotchiNum")
         UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "changeTamagotchi"), forKey: "choiceTamagotchi")
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController

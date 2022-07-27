@@ -77,12 +77,16 @@ class SettingTableViewController: UITableViewController {
         }
     }
     //MARK: 데이터 초기화 함수 설정
+    // 한번에 UserDefault 지우는 코드 존재! 찾아보기
     func resetData() {
         UserDefaults.standard.set(0, forKey: "eat0");
         UserDefaults.standard.set(0, forKey: "eat1");
         UserDefaults.standard.set(1, forKey: "eat2");
-        UserDefaults.standard.set(false, forKey: "First")
-        
+        UserDefaults.standard.removeObject(forKey: "First")
+        UserDefaults.standard.removeObject(forKey: "tamagotchiNum")
+        UserDefaults.standard.removeObject(forKey: "nickname")
+        UserDefaults.standard.set(1, forKey: "level")
+        exit(0)
     }
     
 }

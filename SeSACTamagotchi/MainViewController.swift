@@ -62,9 +62,10 @@ class MainViewController: UIViewController {
         levelLabel.text = "LV\(UserDefaults.standard.integer(forKey: "level"))・밥알 \(UserDefaults.standard.integer(forKey: "eat0"))개・물방울\(UserDefaults.standard.integer(forKey: "eat1"))개"
 
         // 기본 이미지 설정
-        tamagotchiImage.image = UIImage(named:"\(tamagotchiNum)-\(UserDefaults.standard.integer(forKey: "eat2"))")
+        tamagotchiImage.image = UIImage(named:"\(UserDefaults.standard.integer(forKey: "tamagotchiNum"))-\(UserDefaults.standard.integer(forKey: "eat2"))")
 
         //MARK: 네비게이션 바 설정
+        nickname = UserDefaults.standard.string(forKey: "nickname") ?? "대장"
         navigationItem.title = "\(nickname)님의 다마고치"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(settingButtonClicked))
         
@@ -112,6 +113,14 @@ class MainViewController: UIViewController {
     //MARK: 물주는 버튼 클릭시 설정
     @IBAction func waterButtonTappend(_ sender: UIButton) {
         talkLabel.text = tamagotchiTalk.randomElement()
+        while true{
+            let s = tamagotchiTalk.randomElement()
+            guard talkLabel.text != s else {
+                continue
+            }
+            talkLabel.text = s
+            break
+        }
         let currentCount = UserDefaults.standard.integer(forKey: "eat1")
         let updateCount = currentCount + 1
         UserDefaults.standard.set(updateCount, forKey: "eat1")
@@ -141,8 +150,7 @@ class MainViewController: UIViewController {
     
     //MARK: 이미지 화면 업데이트 필요 함수 설정
     func tamagotchiImageReset() {
-        tamagotchiImage.image = UIImage(named: "\(tamagotchiNum)-\(UserDefaults.standard.integer(forKey: "eat2"))")
-
+        tamagotchiImage.image = UIImage(named:"\(UserDefaults.standard.integer(forKey: "tamagotchiNum"))-\(UserDefaults.standard.integer(forKey: "eat2"))")
     }
 
     //MARK: 밥주는 텍스트 필드 클릭 시
