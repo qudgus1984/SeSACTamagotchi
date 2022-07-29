@@ -59,18 +59,19 @@ class TamagotchiStartViewController: UIViewController {
         tamagotchiImageView.image = UIImage(named: "\(tamagotchiNum)-6")
         
         //MARK: 선택한 다마고치의 설명 및 이름 설정
-        if tamagotchiNum == 1 {
-            tamagotchiNicknameLabel.text = "따끔따끔 다마고치"
-            tamagotchiExplainLabel.text = "저는 따끔따끔 다마고치입니다. 몸무게는 150톤이고 키는 150km입니당 저 따가워요 건들 ㄴㄴ 따끔해요~"
-            
-        } else if tamagotchiNum == 2 {
-            tamagotchiNicknameLabel.text = "방실방실 다마고치"
-            tamagotchiExplainLabel.text = "저는 방실방실 다마고치입니다. 몸무게는 150톤이고 키는 150km입니당 저는 해맑지만 화나면 무서워요~ 조심하세용 방실방실해요~"
-            
-        } else if tamagotchiNum == 3 {
-            tamagotchiNicknameLabel.text = "반짝반짝 다마고치"
-            tamagotchiExplainLabel.text = "저는 반짝반짝 다마고치입니다. 몸무게는 150톤이고 키는 150km입니당 저는 밝아서 눈아플수도 있어용 조심하세용 반짝반짝해요~"
-        }
+        tamagotchiChoice(nicknameLabel: tamagotchiNicknameLabel, explainLabel: tamagotchiExplainLabel)
+//        if tamagotchiNum == 1 {
+//            tamagotchiNicknameLabel.text = tamagotchiData.StartTamagotchi[tamagotchiNum-1].title
+//            tamagotchiExplainLabel.text = tamagotchiData.StartTamagotchi[tamagotchiNum-1].explain
+//
+//        } else if tamagotchiNum == 2 {
+//            tamagotchiNicknameLabel.text = tamagotchiData.StartTamagotchi[tamagotchiNum-1].title
+//            tamagotchiExplainLabel.text = tamagotchiData.StartTamagotchi[tamagotchiNum-1].explain
+//
+//        } else if tamagotchiNum == 3 {
+//            tamagotchiNicknameLabel.text = tamagotchiData.StartTamagotchi[tamagotchiNum-1].title
+//            tamagotchiExplainLabel.text = tamagotchiData.StartTamagotchi[tamagotchiNum-1].explain
+//        }
     }
     
     //MARK: 취소 버튼 클릭 시

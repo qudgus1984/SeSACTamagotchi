@@ -26,6 +26,7 @@
 		2FA69CD2288B0318009053F7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA69CD1288B0318009053F7 /* MainViewController.swift */; };
 		2FA69CD5288B0C28009053F7 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA69CD4288B0C28009053F7 /* Setting.storyboard */; };
 		2FA69CD9288B10CF009053F7 /* ViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA69CD8288B10CF009053F7 /* ViewUI.swift */; };
+		2FAB8BAE2893BA0F005769B0 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAB8BAD2893BA0F005769B0 /* Function.swift */; };
 		2FAD5D02288C217700D3F8CF /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAD5D01288C217700D3F8CF /* SettingTableViewController.swift */; };
 		2FAD5D04288D16CE00D3F8CF /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAD5D03288D16CE00D3F8CF /* SettingTableViewCell.swift */; };
 		2FAD5D07288D29C100D3F8CF /* ChangeName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FAD5D06288D29C100D3F8CF /* ChangeName.storyboard */; };
@@ -57,6 +58,7 @@
 		2FA69CD1288B0318009053F7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2FA69CD4288B0C28009053F7 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		2FA69CD8288B10CF009053F7 /* ViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUI.swift; sourceTree = "<group>"; };
+		2FAB8BAD2893BA0F005769B0 /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		2FAD5D01288C217700D3F8CF /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		2FAD5D03288D16CE00D3F8CF /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		2FAD5D06288D29C100D3F8CF /* ChangeName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeName.storyboard; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		2F90B4C3288A87C8002181FE /* SeSACTamagotchi */ = {
 			isa = PBXGroup;
 			children = (
+				2FAB8BAC2893B9FF005769B0 /* Function */,
 				2FBCC581288D6F420090BCE4 /* TamagotchiChangeStart */,
 				2FBCC57A288D65860090BCE4 /* TamagotchiChange */,
 				2FAD5D05288D29A800D3F8CF /* changeName */,
@@ -173,6 +176,14 @@
 				2FAD5D01288C217700D3F8CF /* SettingTableViewController.swift */,
 			);
 			name = Setting;
+			sourceTree = "<group>";
+		};
+		2FAB8BAC2893B9FF005769B0 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				2FAB8BAD2893BA0F005769B0 /* Function.swift */,
+			);
+			name = Function;
 			sourceTree = "<group>";
 		};
 		2FAD5D05288D29A800D3F8CF /* changeName */ = {
@@ -297,6 +308,7 @@
 				2F90B4C9288A87C8002181FE /* TamagotchiChoice.swift in Sources */,
 				2F90B4E6288AD535002181FE /* TamagotchiStartViewController.swift in Sources */,
 				2F90B4C5288A87C8002181FE /* AppDelegate.swift in Sources */,
+				2FAB8BAE2893BA0F005769B0 /* Function.swift in Sources */,
 				2FAD5D04288D16CE00D3F8CF /* SettingTableViewCell.swift in Sources */,
 				2F90B4E1288A920D002181FE /* TamagotchiData.swift in Sources */,
 				2F90B4EB288ADBC6002181FE /* Label+TextFieldUI.swift in Sources */,
