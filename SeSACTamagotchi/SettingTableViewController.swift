@@ -90,7 +90,7 @@ class SettingTableViewController: UITableViewController {
         for key in UserDefaults.standard.dictionaryRepresentation().keys {
             UserDefaults.standard.removeObject(forKey: key.description)
         }
-        UserDefaults.standard.set(1, forKey: "eat2");
+        UserDefaults.standard.set(1, forKey: "level");
 
         exit(0)
         //
