@@ -21,13 +21,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //MARK: 다마고치 선택 후 main 화면으로 이동 -> 구현 시 네비바, 이미지 로드 실패문제 발생
         // -> 해결 방법 : nav 바까지 임베디드 해줘야 함
                         
-        if UserDefaults.standard.bool(forKey: "First") {
+        if UserDefaultsHelper.standard.First {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
             let nav = UINavigationController(rootViewController: vc)
             window?.rootViewController = nav
 
-            
         } else {
             let sb = UIStoryboard(name: "TamagotchiChoice", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "TamagotchiChoiceCollectionViewController") as! TamagotchiChoiceCollectionViewController

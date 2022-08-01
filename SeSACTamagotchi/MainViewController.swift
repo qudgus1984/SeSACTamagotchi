@@ -140,8 +140,8 @@ class MainViewController: UIViewController {
             default: break
             }
         }
-        UserDefaults.standard.set(tamagotchiLevel, forKey: "eat2")
-        UserDefaults.standard.set(level, forKey: "level")
+        UserDefaults.standard.set(tamagotchiLevel, forKey: "level")
+        UserDefaults.standard.set(level, forKey: "levelData")
         
         //LVLabel 출력
         levelLabel.text = "LV\(level)・밥알 \(UserDefaults.standard.integer(forKey: "rice"))개・물방울\(UserDefaults.standard.integer(forKey: "water"))개"
