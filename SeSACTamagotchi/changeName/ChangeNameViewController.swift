@@ -31,7 +31,7 @@ class ChangeNameViewController: UIViewController {
             return nicknameTextField.placeholder = nickname
         } else {
             nickname = nicknameTextField.text!
-            UserDefaults.standard.set(nickname, forKey: "nickname")
+            UserDefaultsHelper.standard.nickname = nickname
         }
     }
 }
